@@ -35,3 +35,35 @@ git add LinuxServer/*
 git commit "Add new VM + Automatizace"
 git push
 ```
+
+
+## Dokumentace
+Tento projekt slouží k vytvoření virtuálního serveru Debian pomocí nástroje Vagrant.
+Po spuštění se automaticky nainstaluje webový server Apache2 a nastaví se přístup přes SSH pomocí veřejného klíče.
+
+Po dokončení instalace je možné server otevřít v prohlížeči na adrese:
+http://localhost:8080
+Zobrazí se výchozí stránka Apache s textem „It works!“.
+
+Postup použití
+Naklonuj repozitář z GitHubu.
+Otevři složku projektu v terminálu.
+Spusť příkaz:
+
+vagrant up
+
+Tím se automaticky vytvoří a nakonfiguruje Debian s Apache2.
+Po dokončení se připoj přes PuTTY pomocí:
+Host name: 127.0.0.1
+Port: 2222
+User: vagrant
+Po přihlášení můžeš ověřit stav Apache příkazem:
+sudo systemctl status apache2
+
+Co projekt dělá
+Vytvoří virtuální server Debian 12.
+
+Přidá SSH veřejný klíč pro přihlášení bez hesla.
+Automaticky nainstaluje a spustí Apache2.
+Nastaví přesměrování portu 8022 → 8080.
+.
